@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
+</style>
+<script>
+function info(){
+  var popup = document.getElementById("popup");
+  popup.classList.toggle("show");
+}
+</script>
+
+<meta charset="UTF-8">
+	<title> Amazon ECE</title>
+<link rel="stylesheet" type="text/css" href="piscine.css"/>
+</head>
+<body>
+	<div id="header">
+		<nav>
+		<strong class="logo"><a href=<!-- A COMPLETER -->> <img src = "logo.png"/></a></strong>
+		<ul>
+			<li><a title="Des livres et nous" href=<!-- A COMPLETER -->>Livres</a></li>
+			<li><a title="Poussons la chansonnette" href=<!-- A COMPLETER -->>Musique</a></li>
+			<li><a title="Habillement" href=<!-- A COMPLETER -->>Vêtements</a></li>
+			<li><a title="Sports et Loisirs" href=<!-- A COMPLETER -->>Sports et Loisirs</a></li>
+			<li><a title="Connexion" href=<!-- A COMPLETER -->>Se connecter</a></li>
+		</ul>
+		</nav>
+	</div>
+	<div class = "global">
+	<div class = "mainsection">
+		<ul><?php//connexionBDD
+		$database = "amazonece";
+		try {
+		$db = new PDO('mysql:host=localhost;dbname=amazonece;charset=utf8', 'root', '');
+		}
+		catch(Exception $e)
+		{
+			die('Erreur :'.$e::getMessage());
+		}
+		$repertoirevid ="";
+		if ($db){
+			//la seule ligne a modifier pour chaque catégorie
+			$resultat = $db::query('SELECT * FROM items');
+			while($element = $resultat::fetch()):
+			//creer une case pour chaque élément concerné dans la bdd?>
+				<li onclick='info()'><img src="<?php echo $element["photoI"]?>"/></li>
+					<span class= "nomItem"> 
+						<h3><?php echo $element['nomI']?><br/></h3>
+					</span>
+					<span id ="popup">
+						<img src="<?echo $element['photoI']?>"/><br/>
+						Description : <?echo $element['descriptionI']?></br>
+						Prix : <? echo $element['prixI']?><br/>
+						Restant : <?echo $element['nombreI']?><br/>
+			<?php if ($element['videoI']!= ''){?>
+						<video width='320' height='240'>
+								<source src="<?php echo $repertoirevid.$element['videoI']?>"/>
+							</video>;
+					<?php }?>
+					</span>;
+			<?php endwhile;
+		}
+		else{?>
+			Database not found
+		<?php}?>
+					
+		</ul>
+	</div>
+	</div>
+</body>

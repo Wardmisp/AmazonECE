@@ -1,0 +1,96 @@
+html{
+	font-family: 'Lato', sans-serif;
+}
+/*design du menu*/
+#header{
+	position: sticky;
+	top:0;
+	z-index:2;
+	background-color; white;
+}
+nav{
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+	z-index:2;
+	padding: 25px 35px;
+}
+nav ul{
+	float:right;
+	padding: 10px 0 10px 0;
+	font-size: 24px;
+	font-weight: bold;
+	list-style-type: none;
+}
+nav li {
+	vertical-align: baseline;
+	padding: 10px 120px 8px 0;
+	float: left;
+}
+nav li:hover{
+	text-decoration: underline overline; 
+}
+.logo img {
+	float: left;
+    display: block;
+    width:252px ;
+}
+a{
+	text-decoration: none; 
+	color: black;
+}
+/*Design du corps de la page*/
+.mainsection{
+    position: relative;
+    margin-top: 40px;
+    padding: 0 60px 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.global{
+	
+}
+.mainsection ul{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.mainsection li{
+	display: list-item;
+	float: left;
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.mainsection img{
+	display: block;
+    width: 120px;
+    height: 120px;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.nomItem {
+	position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 1;
+}
+h3{
+	font: bold 15px;
+}
+.popup{
+	visibility: hidden;
+}
+}
