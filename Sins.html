@@ -24,6 +24,7 @@ function info(){
 			<li><a title="Habillement" href=<!-- A COMPLETER -->>Vêtements</a></li>
 			<li><a title="Sports et Loisirs" href=<!-- A COMPLETER -->>Sports et Loisirs</a></li>
 			<li><a title="Connexion" href=<!-- A COMPLETER -->>Se connecter</a></li>
+			<li><a title="Vente Flash" href=<!-- A COMPLETER -->>Ventes Flash</a></li>
 		</ul>
 		</nav>
 	</div>
@@ -36,13 +37,13 @@ function info(){
 		}
 		catch(Exception $e)
 		{
-			die('Erreur :'.$e::getMessage());
+			die('Erreur :'.$e->getMessage());
 		}
 		$repertoirevid ="";
 		if ($db){
 			//la seule ligne a modifier pour chaque catégorie
-			$resultat = $db::query('SELECT * FROM items');
-			while($element = $resultat::fetch()):
+			$resultat = $db->query('SELECT * FROM items');
+			while($element = $resultat->fetch()):
 			//creer une case pour chaque élément concerné dans la bdd?>
 				<li onclick='info()'><img src="<?php echo $element["photoI"]?>"/></li>
 					<span class= "nomItem"> 
