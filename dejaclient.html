@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
- 	<title>Déjà client</title>
-</head>
-<body>
-	<h1>Déjà Client</h1>
-	<h2>Identifiez-vous pour acceder à votre compte : </h2>
-	<form>
-		<table>
-			<tr>
- 				<td>Nom: </td>
- 				<td><input type="text" name="nom"> </td>>
- 			</tr>
- 			<br>
- 			<tr>
- 				<td>Prenom: </td>
- 				<td><input type="text" name="prenom"> </td>>
- 			</tr>
- 			<br>
- 			<tr>
- 				<td>Adresse: </td>
- 				<td> <input type=”password” name=”adresse1”> </td>
- 			</tr>
- 			<br>
- 			<tr>
- 				<td>Email: </td>
- 				<td><input type="text" name="Email"> </td>
- 			</tr>
- 			<br>
-
-			<!---Bouton de validation--->
- 			<tr>	
- 			<td colspan=”2” align=”center”>
- 			<input type=”submit” name=”Valider”> 
- 			</td>
-
- 			</tr>
- 		</table>
- 	</form>
-
-<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>. </p> 
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="compte.css"/>
+	 	<title>Déjà client</title>
+	</head>
 
 
+	<body>
+		<header>
+			<div id="logo">
+				<img src="logo.png" class="flottant" href="page d'acceuil"/>
+			</div>
+			<nav>
+				<ul>
+					<li><a title="Des livres et nous" href=<!-- A COMPLETER -->>Livres</a></li>
+					<li><a title="Poussons la chansonnette" href=<!-- A COMPLETER -->>Musique</a></li>
+					<li><a title="Habillement" href=<!-- A COMPLETER -->>Vêtements</a></li>
+					<li><a title="Sports et Loisirs" href=<!-- A COMPLETER -->>Sports et Loisirs</a></li>
+					<li><a title="Connexion" href="compte.html">>Se connecter</a></li>
+					<li><a title="Vente Flash" href=<!-- A COMPLETER -->>Ventes Flash</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section>
+			<h1>Déjà Client</h1>
+			<h2>Identifiez-vous pour acceder à votre compte :</h2>
+			<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>.</p> 
 
-<footer>
- 		<small>
- 			<td align=”center”></td>
- 			<p>Redigé par : Mathilde Giraudon. 
- 			<br>
- 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
- 			<p>Copyright &copy;2019 Latest update: 
- 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
- 		</small>
-	</footer>
-</body>
+			<form method="POST" action="dejaclient.php">
+				<fieldset>
+					<fieldset>
+						<legend>Vos Identifiants</legend>
+						<tr>
+			 				<td>Nom: </td>
+			 				<td><input type="text" name="nomA" autofocus required> </td>
+			 			</tr><br>
+
+			 			<tr>
+			 				<td>Prenom: </td>
+			 				<td><input type="text" name="prenomA" class="bloci" required> </td>
+			 			</tr><br>
+			 			<tr>
+			 				<td>Adresse: </td>
+			 				<td> <input type=”text” name=”adresse” required> </td>
+			 			</tr><br>
+
+			 			<tr>
+			 				<td>Email: </td>
+			 				<td><input type="text" name="mailA" required> </td>
+			 			</tr><br>
+			 			<tr>
+			 				<td>Mot de Passe: </td>
+			 				<td><input type="password" name="pass" maxlength="4" required> </td>
+			 			</tr><br>	
+			 		</fieldset>
+					<input type="submit" value="Valider"/> 
+				</fieldset>
+		 	</form>	
+		</section>
+
+		<footer>
+	 		<small>
+	 			<td align=”center”></td>
+	 			<p>Redigé par : Mathilde Giraudon. 
+	 			<br>
+	 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
+	 			<p>Copyright &copy;2019 Latest update: 
+	 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
+	 		</small>
+		</footer>
+	</body>
+</html>

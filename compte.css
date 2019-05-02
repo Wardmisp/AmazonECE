@@ -1,0 +1,121 @@
+header
+{
+
+}
+
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#logo img
+{
+    width: 20%;
+    height: 20%;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+nav li
+{
+    margin-right: 15px;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+nav a
+{
+    font-size: 14px;
+    color: gray;
+    padding-bottom: 3px;
+    text-decoration: none;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+nav a:hover
+{
+    color: green;
+    border-bottom: 3px solid green;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer
+{
+	display:flex;
+	flex-direction: line;
+	justify-content: center; /* bloc centre*/
+	
+}
+h1
+{
+	color: rgb(197,215,0); /* couleur du texte*/
+	text-align: center; /* alignement texte*/
+	font-family: Comic Sans MS;  /* police du texte*/
+	border: 6px rgb(197,215,0) ridge; /* carde bordure du texte*/
+	border-radius: 20px / 10px; /* carde bodure arrondi */
+	box-shadow: 6px 6px 6px black; /* ombre de la bordure*/
+}
+#blocg
+{
+	display:flex; 
+	flex-direction: line; /*alignement des bloc*/
+	flex-wrap: wrap; /*a la ligne qd plus de place*/
+	justify-content: center; /* bloc centre par rapport a la section*/
+	align-content: center;
+	margin: auto;
+	text-align: center; /* alignement texte*/
+
+
+}
+
+.blocdef
+{
+	font-family: Comic Sans MS;
+	text-align: center;
+	border: 3px rgb(197,215,0) solid;
+	border-radius: 20px / 10px;
+	box-shadow: 6px 6px 6px black;
+	padding: 20px; /*espacement interieur du texte a raport au cadree*/
+	width: 100px; /*dimension du cadre*/
+	margin: 100px; /*marge exterieur position automatique centre*/
+	display : flex;
+	background-color: gray;
+	justify-content: center; /* bloc centre par rapport a la section*/
+	align-content: center;
+
+}
+
+.footer
+{
+	color: gray;
+	text-align: center;
+	font-size: small;
+	font-style: italic;
+	text-align: center;
+	clear: both;
+	padding: 20px;
+
+}
+
+bloci:focus
+{
+	background-color: rgb(250,255,185);
+}

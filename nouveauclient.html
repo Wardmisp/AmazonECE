@@ -1,106 +1,129 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
- 	<title>Bienvenue</title>
-</head>
-
-<body>
-
-	<h1>Nouveau client</h1>
-	<h2> Veuillez entrer vos cordonnées pour créer un nouveau compte</h2>
-    <p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>. </p> 
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="compte.css"/>
+	 	<title>Bienvenue</title>
+	</head>
 
 
-<from action="nouveauclient.php" method="post">
-	<h3> Coordonnées : </h3>
-		<br>
-		<tr>
-			<td>Nom:</td>
-			<td><input type="text" name"nom"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Prénom:</td>
-			<td><input type="text" name"prenom"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Adresse:</td>
-			<td><input type="text" name"adresse"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Ville:</td>
-			<td><input type="text" name"ville"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Code Postal:</td>
-			<td><input type="text" name"codepostal"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Pays:</td>
-			<td><input type="text" name"pays"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Téléphone:</td>
-			<td><input type="text" name"telephone"/></td>
-		</tr>
-		<br>
+	<body>
+		<header>
+			<div id="logo">
+				<img src="logo.png" class="flottant" href="page d'acceuil"/>
+			</div>
+			<nav>
+				<ul>
+					<li><a title="Des livres et nous" href=<!-- A COMPLETER -->>Livres</a></li>
+					<li><a title="Poussons la chansonnette" href=<!-- A COMPLETER -->>Musique</a></li>
+					<li><a title="Habillement" href=<!-- A COMPLETER -->>Vêtements</a></li>
+					<li><a title="Sports et Loisirs" href=<!-- A COMPLETER -->>Sports et Loisirs</a></li>
+					<li><a title="Connexion" href="compte.html">>Se connecter</a></li>
+					<li><a title="Vente Flash" href=<!-- A COMPLETER -->>Ventes Flash</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section>
+			<h1>Nouveau Client</h1>
+			<h2>Veuillez entrer vos informations pour créer votre compte:</h2>
+			<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>.</p> 
 
-		<h3> Information de paiement:</h3>
-		<br>
-		<tr>
-			<td>Type de carte de paiement:</td>
-			<td><input type="text" name"typecarte"/></td> <!---(Visa, MasterCard, American Express, PayPal)--->
-		</tr>
-		<br>
-		<tr>
-			<td>Numéro de la carte:</td>
-			<td><input type="text" name"numcarte"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Nom de la carte:</td>
-			<td><input type="text" name"nomcarte"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Date d'expériation :</td>
-			<td><input type="text" name"date"/></td>
-		</tr>
-		<br>
-		<tr>
-			<td>Code cryptogramme de sécurité:</td>
-			<td><input type="text" name"code"/></td> <!---3 ou 4 chiffres, selon la carte--->
-		</tr>
-		<br>
-		</table>
-	</from>
+			<form method="POST" action="newclient.php">
+				<fieldset>
+					<fieldset>
+						<legend>Vos Identifiants</legend>
+						<tr>
+			 				<td>Nom: </td>
+			 				<td><input type="text" name="nomA" autofocus required> </td>
+			 			</tr><br>
 
+			 			<tr>
+			 				<td>Prenom: </td>
+			 				<td><input type="text" name="prenomA" class="bloci" required> </td>
+			 			</tr><br>
+			 			<tr>
+			 				<td>Adresse: </td>
+			 				<td> <input type=”text” name=”adresse” required> </td>
+			 			</tr><br>
+			 			<tr>
+							<td>Ville:</td>
+							<td><input type="text" name="ville" id="ville"></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Code Postal:</td>
+							<td><input type="text" name="codepostal" id="codepostal"></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Pays:</td>
+							<td><input type="text" name="pays" id="pays"></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Téléphone:</td>
+							<td><input type="tel" name="telephone" maxlength="10" id="telephone"></td>
+						</tr>
+						<br>
+			 			<tr>
+			 				<td>Email: </td>
+			 				<td><input type="text" name="mailA" required> </td>
+			 			</tr><br>
+			 			<tr>
+			 				<td>Mot de Passe: </td>
+			 				<td><input type="password" name="pass" maxlength="4" required> </td>
+			 			</tr><br>	
+			 		</fieldset>
+			 		<fieldset>
+			 			<legend>Information de paiement</legend>
 
+						<br>
+						<label>Type de carte: </label>
+						<select name="typecarte">
+					  		<option value="Visa">Visa</option>
+					 		<option value="MasterCard">MasterCard</option>
+					  		<option value="AmericanExpress">American Express</option>
+					  		<option value="PayPal">Paypal</option>
+						</select>
+						<br>
+						<tr>
+							<td>Numéro de la carte:</td>
+							<td><input type="password" name="numcarte" maxlength="16" required></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Nom de la carte:</td>
+							<td><input type="text" name="nomcarte" required></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Date d'expériation :</td>
+							<td><input type="date" name="date" required></td>
+						</tr>
+						<br>
+						<tr>
+							<td>Code cryptogramme de sécurité:</td>
+							<td><input type="password" name="code" maxlength="3" required></td> 
+						</tr>
+						<br>
+			 		</fieldset>
+			 		<input type="checkbox" name="condition" id="condition" required /><label for="condition">Vous devez accepter les conditions d'utilisateur!</label>
+			 		<p>Vous trouvez plus d'informations <a  href="conditions.html">ici</a> ?<br /></p>
+					<input type="submit" value="Valider"/> 
+				</fieldset>
+		 	</form>	
+		</section>
 
-
-
-
-
-
-
-
-<footer>
- 		<small>
- 			<td align=”center”></td>
- 			<p>Redigé par : Mathilde Giraudon. 
- 			<br>
- 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
- 			<p>Copyright &copy;2019 Latest update: 
- 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
- 		</small>
-	</footer>
-
-</body>
-
+		<footer>
+	 		<small>
+	 			<td align=”center”></td>
+	 			<p>Redigé par : Mathilde Giraudon. 
+	 			<br>
+	 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
+	 			<p>Copyright &copy;2019 Latest update: 
+	 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
+	 		</small>
+		</footer>
+	</body>
+</html>
