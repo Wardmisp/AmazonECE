@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="compte.css"/>
+	 	<title>Bienvenue</title>
+	</head>
+
+	<body>
+		<header>
+			<div id="logo">
+				<img src="logo.png" class="flottant" href="page d'acceuil"/>
+			</div>
+			<nav>
+				<ul>
+					<li><a title="Des livres et nous" href=<!-- A COMPLETER -->>Livres</a></li>
+					<li><a title="Poussons la chansonnette" href=<!-- A COMPLETER -->>Musique</a></li>
+					<li><a title="Habillement" href=<!-- A COMPLETER -->>Vêtements</a></li>
+					<li><a title="Sports et Loisirs" href=<!-- A COMPLETER -->>Sports et Loisirs</a></li>
+					<li><a title="Connexion" href="compte.html">>Se connecter</a></li>
+					<li><a title="Vente Flash" href=<!-- A COMPLETER -->>Ventes Flash</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section>
+			<h1>Nouveau client</h1>
+			<h2> Veuillez entrer vos cordonnées pour créer un nouveau compte</h2>
+	  	  <p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>. </p> 
+
+			<from action="cible.php" method="POST">
+				<legend>Vos Coordonnées</legend>
+					<label>Nom: <input type="text" name="nom" id="nom" autofocus required /></label><br>
+					<label>Prénom: <input type="text" name="prenom" id="prenom" required /></label><br>
+					<label>Adresse: <input type="text" name="adresse" id="adresse"  required /></label><br>
+					<label>Ville: <input type="text" name="ville" id="ville"/></label><br>
+					<label>Code Postal: <input type="text" name="codepostal" id="codepostal"/></label><br>
+					<label>Pays: <input type="text" name="pays" id="pays"/></label><br>
+					<label>Téléphone: <input type="tel" name="telephone" maxlength="10" id="telephone"/></label><br>
+					<labbel>Email: <input type="email" name="emailA"  required ></labbel><br>
+					<input type="submit" value="Valider"/> 
+			</from>
+		</section>
+	</body>
+</html>
+
+

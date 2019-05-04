@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="compte.css"/>
- 	<title>Connexion</title>
+ 	<title>Administrateur</title>
 </head>
 
 
@@ -22,38 +22,43 @@
 			</ul>
 	</header>
 
-		<section>
-			<h1>Déjà Client</h1>
-			<h2>Identifiez-vous pour acceder à votre compte :</h2>
-			<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>.</p> 
+	<section>
+			<h1>Administrateur</h1>
+			<h2>Veuillez entrer vos informations:</h2>
+			<p>Retour à la <a href="Connexion.html">page d’accueil des connexion</a>.</p> 
 
-			<form method="POST" action="dejaclient.php">
+			<form method="POST" action="nouveauclient.php">
 				<fieldset>
 					<fieldset>
 						<legend>Vos Identifiants</legend>
-			 			<tr>
-			 				<td>Email: </td>
-			 				<td><input type="text" name="mailA" required> </td>
+						<tr>
+			 				<td>Pseudo: </td>
+			 				<td><input type="text" name="pseudo" autofocus required> </td>
 			 			</tr><br>
 			 			<tr>
 			 				<td>Mot de Passe: </td>
-			 				<td><input type="password" name="pass" maxlength="4" required> </td>
-			 			</tr><br>	
+			 				<td><input type="password" name="passV" maxlength="4" required> </td>
+			 			</tr><br>
+			 		
 			 		</fieldset>
 					<input type="submit" value="Valider"/> 
 				</fieldset>
 		 	</form>	
 		</section>
 
-		<footer>
-	 		<small>
-	 			<td align=”center”></td>
-	 			<p>Redigé par : Mathilde Giraudon. 
-	 			<br>
-	 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
-	 			<p>Copyright &copy;2019 Latest update: 
-	 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
-	 		</small>
-		</footer>
-	</body>
+	
+
+	<footer>
+ 		<small>
+ 			<td align=”center”></td>
+ 			<p>Redigé par : Mathilde Giraudon. 
+ 			<br>
+ 			Contact: <a href="mailto:jean-pierre.segado.ece.fr">mathilde.giraudon@gmail.com</a></p>
+ 			<p>Copyright &copy;2019 Latest update: 
+ 				<time datetime="2019-04-29 18:00">Aujourd’hui</time></p>
+ 		</small>
+	</footer>
+
+</body>
 </html>
+

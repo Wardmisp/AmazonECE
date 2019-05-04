@@ -1,73 +1,218 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="compte.css"/>
+ 	<title>Connexion</title>
+</head>
 
 
- 	$noma = isset($_POST["nom"])?$_POST["nom"] : ""; 
- 	$prenoma = isset($_POST["prenom"])?$_POST["prenom"] : ""; 
- 	$adresse = isset($_POST["adresse"])?$_POST["adresse1"] : "";
- 	$ville = isset($_POST["ville"])?$_POST["ville"] : "";
- 	$CodePostal = isset($_POST["codepostal"])?$_POST["codepostal"] : "";
- 	$pays = isset($_POST["pays"])?$_POST["pays"] : "";
- 	$telephone = isset($_POST["telephone"])?$_POST["telephone"] : "";
- 	
-	$erreur = "";
- 		if($nom == "") {$erreur .= "Le champ Nom est vide. <br>";}
-	 	if($prenom == "") {$erreur .= " Le champ Prenom est vide. <br>";}
- 		if($adresse1 == "") {$erreur .= "Le champ Adresse est vide. <br>";}
- 		if($ville == "") {$erreur .= "Le champ Ville est vide. <br>";}
- 		if($codepostal == "") {$erreur .= "Le champ Code Postal est vide. <br>";}
- 		if($pays == "") {$erreur .= "Le champ Pays est vide. <br>";}
- 		if($telephone == "") {$erreur .= "Le champ Téléphone est vide. <br>";}
- 		
- 		if ($erreur == "") {
- 			echo "Formulaire valide";
- 		}
- 		else {
- 			echo "Erreur : $erreur";
+<body>
+	<header>
+		<div id="logo">
+			<img src="LOGO_AZ_ECE.png" class="flottant" href="page d'acceuil"/>
+		</div>
+			<ul>
+				<li><a title="Les Caégories" href="categories.html">Catégories</a></li>
+				<li><a title="Ventes Flash" href="venteflash.html">Vente Flash</a></li>
+				<li><a title="Vendre" href="vendre.html">Vendre</a></li>
+				<li><a title="Connexion" href="Connexion.html">Se connecter</a></li>
+				<li><a title="Panier" href="panier.html">Panier</a></li>
+				<li><a title="Administrateur" href="administrateur.html">Administrateur</a></li>
+			</ul>
+	</header>
 
- 	
- 	$connexion = false;
+	<section>
 
- 	for ($i = 0; $i < count($logs); $i++) {
- 	if ($logs[$login] == $pass) {
- 	$connexion = true;
- 	break;
+	<?php
+
+	$nomA = filter_input(INPUT_POST,'nomA');
+	$prenomA = filter_input(INPUT_POST, 'prenomA');
+	$adresse = filter_input(INPUT_POST, 'adresse');
+	$ville = filter_input(INPUT_POST, 'ville');
+	$codepostal = filter_input(INPUT_POST, 'codepostal');
+	$pays = filter_input(INPUT_POST, 'pays');
+	$telephone = filter_input(INPUT_POST, 'telephone');
+	$mailA = filter_input(INPUT_POST, 'mailA');
+	$pass = filter_input(INPUT_POST, 'pass');
+
+	$typeCB = filter_input(INPUT_POST, 'typeCB');
+	$numeroCB = filter_input(INPUT_POST, 'numeroCB');
+	$nomCB = filter_input(INPUT_POST, 'nomCB');
+	$dateCB = filter_input(INPUT_POST, 'dateCB');
+	$codeCB = filter_input(INPUT_POST, 'codeCB');
+
+
+	if (!empty($nomA))
+	{
+		if (!empty($prenomA))
+		{
+			if (!empty($adresse))
+			{
+				if (!empty($ville))
+				{
+					if(!empty($codepostal))	
+					{
+						if (!empty($pays))
+						{
+							if (!empty($telephone))
+							{
+								if (!empty($mailA))
+								{
+									if(!empty($pass))
+									{
+										$host = "localhost";
+										$dbusername = "root";
+										$dbpassword = "";
+										$dbname = "amazonece";
+
+										//Création de la connection
+										$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+										if (mysqli_connect_error())
+										{
+											die('Connect Error ('. mysqli_connect_error() .') '. mysqli_connect_error());
+										}
+										else
+										{
+											$sql = "INSERT INTO acheteur (nomA,prenomA,adresse,ville,codepostal,pays,telephone,mailA,pass) 
+											values ('$nomA','$prenomA','$adresse','$ville','$codepostal','$pays','$telephone','$mailA','$pass')";
+
+											if ($conn->query($sql))
+											{
+												echo "Les coordonnées du nouveau client ont été ajouter avec sucess !";
+											}
+											else
+											{
+												echo "Error: " . $sql . "<br>" . $conn->error;
+											}
+											$conn->close();
+										}				
+									}
+									else
+									{
+										echo "Passeword n'est pas remplie";
+										die();
+									}
+								}
+								else
+								{
+									echo "mail n'est pas remplie";
+									die();
+								}
+							}
+							else
+							{
+								echo " telephone n'est pas remplie";
+								die();
+							}
+						}
+						else
+						{
+							echo "pays n'est pas remplie";
+							die();
+						}
+					}
+					else
+					{
+						echo "codepostal n'est pas remplie";
+						die();
+					}
+				}
+				else
+				{
+					echo "ville n'est pas remplie";
+					die();
+				}
+			}
+			else
+			{
+				echo "adresse n'est pas remplie";
+				die();
+			}
+		}
+		else
+		{
+			echo "prenom n'est pas remplie";
+			die();
+		}
 	}
- 	}
-	if ($connexion) {
- 		echo "Connexion okay.";
- 	}
- 	else {
- 		echo "Connexion refusée.";
- 	}
+	else
+	{
+		echo "nom n'est pas remplie";
+		die();
+	}
 
+	if (!empty($typeCB))
+	{
+		if(!empty($numeroCB))
+		{
+			if (!empty($nomCB))
+			{
+				if(!empty($dateCB))
+				{
+					if(!empty($codeCB))
+					{
+						$host = "localhost";
+						$dbusername = "root";
+						$dbpassword = "";
+						$dbname = "amazonece";
 
+						//Création de la connection
+						$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 
-//identifier le nom de base de données
-$database = "amazonece";
-//connectez-vous dans votre BDD
-//Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-$db_handle = mysqli_connect('localhost', 'root', '' );
-$db_found = mysqli_select_db($db_handle, $database);
+						if (mysqli_connect_error())
+						{
+							die('Connect Error ('. mysqli_connect_error() .') '. mysqli_connect_error());
+						}
+						else
+						{
+							$sql = "INSERT INTO carte (typeCB,numeroCB,nomCB,dateCB,codeCB)
+							values ('$typeCB','$numeroCB','$nomCB','$dateCB','$codeCB')";
 
- //si le BDD existe, faire le traitement
-if ($db_found) {
- $sql = "SELECT * FROM amazonece";
- $result = mysqli_query($db_handle, $sql);
- while ($data = mysqli_fetch_assoc($result)) {
- echo "ID de l'acheteur:" . $data['IDAcheteur'] . '<br>';
- echo "nomA:" . $data['nomA'] . '<br>';
- echo "prenomA: " . $data['prenomA'] . '<br>';
- echo "Email de l'acheteur: " . $data['mailA'] . '<br>';
- echo "Adresse: " . $data['adresse'] . '<br>';
- echo "Code Postal: " . $data['CodePostal'] . '<br>';
- echo "Pays: " . $data['Pays'] . '<br>';
- echo "Telephone: " . $data['Telephone'] . '<br>';
- }//end while
+							if ($conn->query($sql))
+							{
+								echo "Les coordonnées Banquaire du nouveau client ont été ajouter avec sucess! ";
+							}
+							else
+							{
+								echo "Error: " . $sql . "<br>" . $conn->error;
+							}
 
-}//end if
-//si le BDD n'existe pas
-else {
- echo "Database not found";
-}//end else
-//fermer la connection
-?>
+							$conn->close();
+						}
+					}
+					else
+					{
+						echo " code CB pas remplie";
+						die();
+					}
+				}
+				else
+				{
+					echo " date CB pas remplie";
+					die();
+				}
+			}
+			else
+			{
+				echo "nom CB pas remplie";
+				die();
+			}
+		}
+		else
+		{
+			echo "numeroCB pas remplie";
+			die();
+		}
+	}
+	else
+	{
+		echo "typeCB pas remplie";
+		die();
+	}
+	?>
+	</section>
+
+</body>
+

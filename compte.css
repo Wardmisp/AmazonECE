@@ -1,8 +1,3 @@
-header
-{
-
-}
-
 #logo
 {
     display: flex;
@@ -12,14 +7,45 @@ header
 
 #logo img
 {
-    width: 20%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
 }
+
+header ul
+{
+    list-style-type: none;
+    display: flex;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+header li
+{
+    margin-right: 15px;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+header a
+{
+    font-size: 14px;
+    color: gray;
+    padding-bottom: 3px;
+    text-decoration: none;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
+header a:hover
+{
+    color: green;
+    border-bottom: 3px solid green;
+    font-family: Comic Sans MS;  /* police du texte*/
+}
+
 
 nav ul
 {
     list-style-type: none;
     display: flex;
+    flex-direction: column;
     font-family: Comic Sans MS;  /* police du texte*/
 }
 
@@ -44,18 +70,6 @@ nav a:hover
     border-bottom: 3px solid green;
     font-family: Comic Sans MS;  /* police du texte*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 footer
 {
