@@ -26,40 +26,41 @@
 
 	<?php
 
-	$nomA = filter_input(INPUT_POST,'nomA');
-	$prenomA = filter_input(INPUT_POST, 'prenomA');
-	$adresse = filter_input(INPUT_POST, 'adresse');
-	$ville = filter_input(INPUT_POST, 'ville');
-	$codepostal = filter_input(INPUT_POST, 'codepostal');
-	$pays = filter_input(INPUT_POST, 'pays');
-	$telephone = filter_input(INPUT_POST, 'telephone');
-	$mailA = filter_input(INPUT_POST, 'mailA');
-	$pass = filter_input(INPUT_POST, 'pass');
+	$nomins = htmlspecialchars($_POST['nomins']);
+	$prenomins = htmlspecialchars($_POST['prenomins']);
+	$adresseins = htmlspecialchars($_POST['adresseins']);
+	$villeins = htmlspecialchars($_POST['villeins']);
+	$codepostalins = htmlspecialchars($_POST['codepostalins']);
+	$paysins = htmlspecialchars($_POST['paysins']);
+	$telephoneins = htmlspecialchars($_POST['telephoneins']);
+	$mailins= htmlspecialchars($_POST['mailins']);
+	$passins = filter_input(INPUT_POST, 'passins');
+	
 
-	$typeCB = filter_input(INPUT_POST, 'typeCB');
-	$numeroCB = filter_input(INPUT_POST, 'numeroCB');
-	$nomCB = filter_input(INPUT_POST, 'nomCB');
-	$dateCB = filter_input(INPUT_POST, 'dateCB');
-	$codeCB = filter_input(INPUT_POST, 'codeCB');
+	$typeCBins = htmlspecialchars($_POST['typeCBins']);
+	$numeroCBins = htmlspecialchars($_POST['numeroCBins']);
+	$nomCBins= htmlspecialchars($_POST['nomCBins']);
+	$dateCBins = htmlspecialchars($_POST['dateCBins']);
+	$codeCBins= htmlspecialchars($_POST['codeCBins']);
 
 
-	if (!empty($nomA))
+	if (!empty($nomins))
 	{
-		if (!empty($prenomA))
+		if (!empty($prenomins))
 		{
-			if (!empty($adresse))
+			if (!empty($adresseins))
 			{
-				if (!empty($ville))
+				if (!empty($villeins))
 				{
-					if(!empty($codepostal))	
+					if(!empty($codepostalins))	
 					{
-						if (!empty($pays))
+						if (!empty($paysins))
 						{
-							if (!empty($telephone))
+							if (!empty($telephoneins))
 							{
-								if (!empty($mailA))
+								if (!empty($mailins))
 								{
-									if(!empty($pass))
+									if(!empty($passins))
 									{
 										$host = "localhost";
 										$dbusername = "root";
@@ -75,16 +76,17 @@
 										}
 										else
 										{
+										
 											$sql = "INSERT INTO acheteur (nomA,prenomA,adresse,ville,codepostal,pays,telephone,mailA,pass) 
-											values ('$nomA','$prenomA','$adresse','$ville','$codepostal','$pays','$telephone','$mailA','$pass')";
+											VALUES ('$nomins','$prenomins','$adresseins','$villeins','$codepostalins','$paysins','$telephoneins','$mailins','$passins')";
 
 											if ($conn->query($sql))
 											{
-												echo "Les coordonnées du nouveau client ont été ajouter avec sucess !";
+												echo "Les coordonnées du nouveau client ont été ajouter avec sucess !" . "<br>";
 											}
 											else
 											{
-												echo "Error: " . $sql . "<br>" . $conn->error;
+												echo "Erreur: les coordonnées n'ont pas été ajouté !" . $sql . "<br>" . $conn->error;
 											}
 											$conn->close();
 										}				
@@ -143,15 +145,15 @@
 		die();
 	}
 
-	if (!empty($typeCB))
+	if (!empty($typeCBins))
 	{
-		if(!empty($numeroCB))
+		if(!empty($numeroCBins))
 		{
-			if (!empty($nomCB))
+			if (!empty($nomCBins))
 			{
-				if(!empty($dateCB))
+				if(!empty($dateCBins))
 				{
-					if(!empty($codeCB))
+					if(!empty($codeCBins))
 					{
 						$host = "localhost";
 						$dbusername = "root";
@@ -168,15 +170,15 @@
 						else
 						{
 							$sql = "INSERT INTO carte (typeCB,numeroCB,nomCB,dateCB,codeCB)
-							values ('$typeCB','$numeroCB','$nomCB','$dateCB','$codeCB')";
+							values ('$typeCBins','$numeroCBins','$nomCBins','$dateCBins','$codeCBins')";
 
 							if ($conn->query($sql))
 							{
-								echo "Les coordonnées Banquaire du nouveau client ont été ajouter avec sucess! ";
+								echo "Les coordonnées Banquaire du nouveau client ont été ajouter avec sucess! " . "<br>";
 							}
 							else
 							{
-								echo "Error: " . $sql . "<br>" . $conn->error;
+								echo "Erreur: les coordonnées banquaire n'ont pas été ajouté ! " . $sql . "<br>" . $conn->error;
 							}
 
 							$conn->close();

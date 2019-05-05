@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 29 avr. 2019 à 13:20
--- Version du serveur :  5.7.21
--- Version de PHP :  7.2.4
+-- Généré le :  Dim 05 mai 2019 à 16:04
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,10 +35,22 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `prenomA` varchar(255) NOT NULL,
   `mailA` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
-  `nombreA` int(11) NOT NULL,
+  `codepostal` int(255) DEFAULT NULL,
+  `ville` varchar(255) DEFAULT NULL,
+  `pays` varchar(255) DEFAULT NULL,
+  `telephone` int(10) NOT NULL,
+  `pass` varchar(255) NOT NULL,
   PRIMARY KEY (`IDAcheteur`)
-) ENGINE=MyISAM DEFAULT CHARSET=ascii;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=ascii;
+
+--
+-- Déchargement des données de la table `acheteur`
+--
+
+INSERT INTO `acheteur` (`IDAcheteur`, `nomA`, `prenomA`, `mailA`, `adresse`, `codepostal`, `ville`, `pays`, `telephone`, `pass`) VALUES
+(30, 'Laffin', 'Lucie', 'Lucie@gmail.com', '1 Rue Duvergier', 75019, 'Paris', 'France', 633333333, '0000'),
+(1, 'Giraudon', 'Mathilde', 'mathilde.giraudon@gmail.com', '8 Rue Docteur Potain', 75019, 'Paris', 'France', 689526260, '1234'),
+(28, 'Troussard', 'Victor', 'victor@gmail.com', '1 Rue de la paix', 75004, 'Paris', 'FRance', 622222222, '1111');
 
 -- --------------------------------------------------------
 
@@ -48,14 +60,23 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
 
 DROP TABLE IF EXISTS `carte`;
 CREATE TABLE IF NOT EXISTS `carte` (
-  `numeroCB` int(11) NOT NULL,
-  `typeCB` int(11) NOT NULL,
+  `IDCB` int(255) NOT NULL AUTO_INCREMENT,
+  `typeCB` varchar(255) NOT NULL,
+  `numeroCB` int(255) NOT NULL,
   `nomCB` varchar(255) NOT NULL,
   `dateCB` date NOT NULL,
   `codeCB` int(11) NOT NULL,
-  `IDAcheteur` int(11) NOT NULL,
-  PRIMARY KEY (`numeroCB`)
-) ENGINE=MyISAM DEFAULT CHARSET=ascii;
+  PRIMARY KEY (`IDCB`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `carte`
+--
+
+INSERT INTO `carte` (`IDCB`, `typeCB`, `numeroCB`, `nomCB`, `dateCB`, `codeCB`) VALUES
+(18, 'Visa', 23232323, 'Laffin', '2019-06-07', 123),
+(17, 'Visa', 45654521, 'Troussard', '2019-06-07', 123),
+(1, 'MasterCard', 11111111, 'Giraudon', '2020-10-19', 111);
 
 -- --------------------------------------------------------
 

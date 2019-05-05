@@ -80,10 +80,10 @@ footer
 }
 h1
 {
-	color: rgb(197,215,0); /* couleur du texte*/
+	color: pink; /* couleur du texte*/
 	text-align: center; /* alignement texte*/
 	font-family: Comic Sans MS;  /* police du texte*/
-	border: 6px rgb(197,215,0) ridge; /* carde bordure du texte*/
+	border: 6px blue ridge; /* carde bordure du texte*/
 	border-radius: 20px / 10px; /* carde bodure arrondi */
 	box-shadow: 6px 6px 6px black; /* ombre de la bordure*/
 }
@@ -104,7 +104,7 @@ h1
 {
 	font-family: Comic Sans MS;
 	text-align: center;
-	border: 3px rgb(197,215,0) solid;
+	border: 3px blue solid;
 	border-radius: 20px / 10px;
 	box-shadow: 6px 6px 6px black;
 	padding: 20px; /*espacement interieur du texte a raport au cadree*/
@@ -131,5 +131,5 @@ h1
 
 bloci:focus
 {
-	background-color: rgb(250,255,185);
+	background-color: blue;
 }

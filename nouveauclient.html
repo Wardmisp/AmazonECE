@@ -26,91 +26,150 @@
 		<h1>Nouveau Client</h1>
 		<h2>Veuillez entrer vos informations pour créer votre compte:</h2>
 		<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>.</p> 
-
-		<form method="POST" action="nouveauclient.php">
-			<fieldset>
+		<div align="center">
+			<form method="POST" action="nouveauclient.php">
 				<fieldset>
-					<legend>Vos Identifiants</legend>
-					<tr>
-		 				<td>Nom: </td>
-		 				<td><input type="text" name="nomA" autofocus required> </td>
-		 			</tr><br>
+					<fieldset>
+						<table>
+						<tr>
+							<td align="right">
+								<legend>Vos Identifiants :</legend>
+							</td>
+						<tr>
 
-		 			<tr>
-		 				<td>Prenom: </td>
-		 				<td><input type="text" name="prenomA" class="bloci" required> </td>
-		 			</tr><br>
-		 			<tr>
-		 				<td>Adresse (ne pas mettre les accents): </td>
-		 				<td><input type="text" name="adresse"> </td>
-		 			</tr><br>
-		 			<tr>
-						<td>Ville:</td>
-						<td><input type="text" name="ville" id="ville"></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Code Postal:</td>
-						<td><input type="text" name="codepostal" id="codepostal"></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Pays:</td>
-						<td><input type="text" name="pays" id="pays"></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Téléphone:</td>
-						<td><input type="tel" name="telephone" maxlength="10" id="telephone"></td>
-					</tr>
-					<br>
-		 			<tr>
-		 				<td>Email: </td>
-		 				<td><input type="text" name="mailA" required> </td>
-		 			</tr><br>
-		 			<tr>
-		 				<td>Mot de Passe: </td>
-		 				<td><input type="password" name="pass" maxlength="4" required> </td>
-		 			</tr><br>	
-		 		</fieldset>
-		 		<fieldset>
-		 			<legend>Information de paiement</legend>
+						<tr>
+							<td align="right">
+			 					<label for ="nomins">Nom: </label>
+			 				</td>
+			 				<td>
+			 					<input type="text" name="nomins" autofocus required>
+			 				</td>
+			 			</tr>
+			 			<tr>
+			 				<td align="right">
+			 					<label>Prenom: </label>
+			 				</td>
+			 				<td>
+			 					<input type="text" name="prenomins" class="bloci" required> 
+			 				</td>
+			 			</tr>
+			 			<tr>
+			 				<td align="right">
+			 					<label>Adresse (ne pas mettre les accents):</label>
+			 				</td>
+			 				<td>
+			 					<input type="text" name="adresseins">
+			 				</td>
+			 			</tr>
+			 			<tr>
+			 				<td align="right">
+								<label align="right">Ville:</label>
+							</td>
+							<td>
+								<input type="text" name="villeins" id="ville">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Code Postal:</label>
+							</td>
+							<td>
+								<input type="text" name="codepostalins" id="codepostal">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Pays:</label>
+							</td>
+							<td>
+								<input type="text" name="paysins" id="pays">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Téléphone:</label>
+							</td>
+							<td>
+								<input type="tel" name="telephoneins" maxlength="10" id="telephone">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+			 					<label>Email: </label>
+			 				</td>
+			 				<td>
+			 					<input type="text" name="mailins" required>
+			 				</td>
+			 			</tr>
+			 			<tr>
+			 				<td align="right">
+			 					<label>Mot de Passe: </label>
+			 				</td>
+			 				<td>
+			 					<input type="password" name="passins" maxlength="4" required>
+			 				</td>
+			 			</tr>	
+			 		</fieldset>
+			 		<fieldset>
+			 			<tr>
+			 				<td align="right">
+			 					<legend>Information de paiement :</legend>
+			 				</td>
+			 			</tr>
+						<br>
+						<tr>
+							<td align="right">
+								<label>Type de carte: </label>
+							</td>
+							<td>
+								<select type="text" name="typeCBins">
 
-					<br>
-					<label>Type de carte: </label>
-					<select type="text" name="typeCB">
-				  		<option value="Visa">Visa</option>
-				 		<option value="MasterCard">MasterCard</option>
-				  		<option value="AmericanExpress">American Express</option>
-				  		<option value="PayPal">Paypal</option>
-					</select>
-					<br>
-					<tr>
-						<td>Numéro de la carte:</td>
-						<td><input type="password" name="numeroCB" maxlength="8" required></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Nom de la carte:</td>
-						<td><input type="text" name="nomCB" required></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Date d'expériation :</td>
-						<td><input type="date" name="dateCB" placeholder="aaaa-mm-jj"required></td>
-					</tr>
-					<br>
-					<tr>
-						<td>Code cryptogramme de sécurité:</td>
-						<td><input type="password" name="codeCB" maxlength="3" required></td> 
-					</tr>
-					<br>
-		 		</fieldset>
-		 		<input type="checkbox" name="condition" id="condition" required /><label for="condition">Vous devez accepter les conditions d'utilisateur!</label>
-		 		<p>Vous trouvez plus d'informations <a  href="conditions.html">ici</a> ?<br /></p>
-				<input type="submit" value="Valider"/> 
-			</fieldset>
-	 	</form>	
+				  					<option value="Visa">Visa</option>
+				 					<option value="MasterCard">MasterCard</option>
+				  					<option value="AmericanExpress">American Express</option>
+				  					<option value="PayPal">Paypal</option>
+								</select>
+							</td>
+						<tr>
+							<td align="right">
+								<label>Numéro de la carte:</label>
+							</td>
+							<td>
+								<input type="password" name="numeroCBins" maxlength="8" required>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Nom de la carte:</label>
+							</td>
+							<td>
+								<input type="text" name="nomCBins" required>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Date d'expériation :</label>
+							</td>
+							<td>
+								<input type="date" name="dateCBins" placeholder="aaaa-mm-jj"required>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<label>Code cryptogramme de sécurité:</label>
+							</td>
+							<td>
+								<input type="password" name="codeCBins" maxlength="3" required>
+							</td> 
+						</tr>
+					</table>
+			 		</fieldset>
+			 		<input type="checkbox" name="condition" id="condition" required /><label for="condition">Vous devez accepter les conditions d'utilisateur!</label>
+			 		<p>Vous trouvez plus d'informations <a  href="conditions.html">ici</a> ?<br /></p>
+					<input type="submit" value="Valider" name="forminscription"/> 
+				</fieldset>
+		 	</form>	
+	 	</div>
 	</section>
 
 	<footer>

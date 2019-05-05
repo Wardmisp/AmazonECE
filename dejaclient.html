@@ -27,20 +27,23 @@
 			<h2>Identifiez-vous pour acceder à votre compte :</h2>
 			<p>Retour à la <a href="compte.html">page d’accueil de votre compte</a>.</p> 
 
-			<form method="POST" action="dejaclient.php">
+			<form method="POST" action="idenclient.php">
 				<fieldset>
 					<fieldset>
 						<legend>Vos Identifiants</legend>
+						<table align="center">
 			 			<tr>
-			 				<td>Email: </td>
-			 				<td><input type="text" name="mailA" required> </td>
+			 				<td align="right">Email: </td>
+			 				<td><input type="text" name="mailconnect" required> </td>
 			 			</tr><br>
 			 			<tr>
-			 				<td>Mot de Passe: </td>
-			 				<td><input type="password" name="pass" maxlength="4" required> </td>
-			 			</tr><br>	
+			 				<td align="right">Mot de Passe: </td>
+			 				<td><input type="password" name="mdpconnect" maxlength="4" required> </td>
+			 			</tr><br>
+			 			</table>
+
 			 		</fieldset>
-					<input type="submit" value="Valider"/> 
+					<input type="submit" name="formconnexion" value="Valider"/> 
 				</fieldset>
 		 	</form>	
 		</section>
