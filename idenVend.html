@@ -27,21 +27,23 @@
 			<h2>Veuillez entrer vos informations:</h2>
 			<p>Retour à la <a href="Connexion.html">page d’accueil des connexion</a>.</p> 
 
-			<form method="POST" action="nouveauclient.php">
+			<form method="POST" action="idenVend.php">
 				<fieldset>
 					<fieldset>
 						<legend>Vos Identifiants</legend>
-						<tr>
-			 				<td>Pseudo: </td>
-			 				<td><input type="text" name="pseudo" autofocus required> </td>
-			 			</tr><br>
-			 			<tr>
-			 				<td>Mot de Passe: </td>
-			 				<td><input type="password" name="passV" maxlength="4" required> </td>
-			 			</tr><br>
+						<table align="center">
+							<tr>
+				 				<td align="right">Pseudo: </td>
+				 				<td><input type="text" name="pseudoViden" autofocus required> </td>
+				 			</tr><br>
+				 			<tr>
+				 				<td align="right">Mail: </td>
+				 				<td><input type="email" name="mailViden"  required> </td>
+				 			</tr><br>
+			 			</table>
 			 		
 			 		</fieldset>
-					<input type="submit" value="Valider"/> 
+					<input type="submit" value="Valider" name="formconnexion"/> 
 				</fieldset>
 		 	</form>	
 		</section>
